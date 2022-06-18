@@ -1,0 +1,40 @@
+{
+  "name": "esbuild-plugin-progress",
+  "version": "1.0.0",
+  "description": "A plugin to add a progress spinner to esbuild",
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "keywords": [
+    "progress",
+    "server",
+    "esbuild",
+    "plugin"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "mocha test/spec/*.test.js --timeout=10000",
+    "test:engines": "nvu engines npm test"
+  },
+  "dependencies": {
+    "ora": "3.4.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "esbuild": "^0.14.45",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.0",
+    "fs-extra": "^10.1.0",
+    "mocha": "^10.0.0",
+    "node-version-use": "^0.2.0",
+    "prettier": "^2.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=12"
+  }
+}
