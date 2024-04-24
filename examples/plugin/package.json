@@ -8,8 +8,14 @@
     "start": "node server.mjs"
   },
   "dependencies": {
-    "esbuild": "^0.14.49",
+    "esbuild": "^0.20.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "tsds": {
+    "source": "src/index.mjs",
+    "targets": [
+      "cjs"
+    ]
   }
 }
