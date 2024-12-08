@@ -1,0 +1,1 @@
+ignores: ["esbuild-plugin-progress", "depcheck", "ts-dev-stack", "@types/*", "react", "react-dom"]
