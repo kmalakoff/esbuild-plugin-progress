@@ -1,6 +1,6 @@
-const ora = require('ora');
+import ora from 'ora';
 
-module.exports = (options = {}) => {
+export default (options = {}) => {
   const message = options.message || 'Building';
   const spinner = ora();
 
@@ -8,7 +8,7 @@ module.exports = (options = {}) => {
     name: 'progress',
     setup(build) {
       build.onStart(() => {
-        spinner.text = message + '\n';
+        spinner.text = `${message}\n`;
         spinner.start();
       });
       build.onEnd((result) => {
