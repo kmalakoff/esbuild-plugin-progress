@@ -1,6 +1,4 @@
 {
   "upgrade": true,
-  "reject": [
-    "ora"
-  ]
+  "reject": ["@types/node","ora"]
 }

@@ -1,5 +1,9 @@
 .DS_Store
 .tmp/
+.cache/
 **/*/public/*.js
 **/*/public/js/*.js
 node_modules/
+dist/
+docs/
+npm-debug.log

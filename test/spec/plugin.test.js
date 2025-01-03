@@ -1,7 +1,7 @@
 const assert = require('assert');
 
 const esbuild = require('esbuild');
-const progress = require('../../lib/index.js');
+const progress = require('esbuild-plugin-progress');
 
 const path = require('path');
 const fs = require('fs-extra');
@@ -17,17 +17,17 @@ describe('plugin', () => {
   });
 
   it('should not fail', async () => {
-    const build = await esbuild.build({
+    const context = await esbuild.context({
       absWorkingDir: tmp,
       entryPoints: ['client.tsx'],
       bundle: true,
       outfile: 'public/js/bundle.js',
-      watch: true,
       plugins: [progress()],
     });
 
-    assert.ok(fs.readFileSync(path.join(tmp, 'public', 'js', 'bundle.js'), 'utf8').length);
+    await context.rebuild();
+    context.dispose();
 
-    await build.stop();
+    assert.ok(fs.readFileSync(path.join(tmp, 'public', 'js', 'bundle.js'), 'utf8').length);
   });
 });
