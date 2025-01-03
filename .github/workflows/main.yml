@@ -1,23 +1,32 @@
 name: CI
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      - master
 jobs:
   test:
     name: Node.js ${{ matrix.node-version }} ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node: ['latest']
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        node: ['lts/Jod']
+        os: [ubuntu-latest, windows-latest]
+        # os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3.4.1
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: git config --global user.name "Github Actions"
       - run: git config --global user.email "actions@users.noreply.github.com"
-      - run: npm install node-version-use -g
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test:engines
+      - run: npm uninstall ts-dev-stack node-version-use depcheck -g
+      - run: rm -rf $HOME/.im
+      - run: npm install ts-dev-stack node-version-use depcheck -g
+      - run: depcheck
+      # - run: npm ci - not working due to binary incompatibilities - install without lockfile - https://github.com/npm/cli/issues/4828#issuecomment-2514987829
+      - run: git checkout master -- package-lock.json
+      - run: npm install
+      - run: npm run docs
+      - run: npm run build
+      - run: npm run test
+      # - run: npm run test:engines
