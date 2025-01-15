@@ -6,8 +6,6 @@ updates:
       interval: weekly
     ignore:
       - dependency-name: 'ora'
-      - dependency-name: '@types/mocha'
-      - dependency-name: '@types/node'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
