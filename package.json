@@ -32,7 +32,7 @@
     "@types/node": "*",
     "esbuild": "*",
     "fs-extra": "*",
-    "install-optional": "^0.1.30",
+    "install-optional": "^0.1.31",
     "react": "*",
     "react-dom": "*"
   },
