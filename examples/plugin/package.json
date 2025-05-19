@@ -12,11 +12,5 @@
     "esbuild": "^0.24.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
-  },
-  "tsds": {
-    "source": "src/index.mjs",
-    "targets": [
-      "cjs"
-    ]
   }
 }

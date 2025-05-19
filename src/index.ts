@@ -1,6 +1,10 @@
 import ora from 'ora';
 
-export default (options = {}) => {
+export interface Options {
+  message?: string;
+}
+
+export default (options: Options = {}) => {
   const message = options.message || 'Building';
   const spinner = ora();
 
