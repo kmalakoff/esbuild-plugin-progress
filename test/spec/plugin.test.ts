@@ -1,16 +1,20 @@
-const assert = require('assert');
+import assert from 'assert';
 
-const { installSync, removeSync } = require('install-optional');
+import { installSync, removeSync } from 'install-optional';
 removeSync('esbuild', '@esbuild/');
 installSync('esbuild', `${process.platform}-${process.arch}`);
-const esbuild = require('esbuild');
-const progress = require('esbuild-plugin-progress');
+import esbuild from 'esbuild';
+// @ts-ignore
+import progress from 'esbuild-plugin-progress';
 
-const path = require('path');
-const fs = require('fs-extra');
+import path from 'path';
+import url from 'url';
+import fs from 'fs-extra';
+
+const __dirname = path.dirname(typeof __filename !== 'undefined' ? __filename : url.fileURLToPath(import.meta.url));
 
 describe('plugin', () => {
-  let tmp;
+  let tmp: string;
   beforeEach(async () => {
     tmp = path.join(process.cwd(), '.tmp');
     await fs.copy(path.join(__dirname, '..', 'data'), tmp);
