@@ -6,7 +6,6 @@ removeSync('esbuild', '@esbuild/');
 installSync('esbuild', `${process.platform}-${process.arch}`);
 
 import esbuild from 'esbuild';
-// @ts-ignore
 import progress from 'esbuild-plugin-progress';
 import fs from 'fs-extra';
 import path from 'path';
