@@ -1,1 +1,1 @@
-ignores: ["esbuild-plugin-progress",  "@types/react", "@types/react-dom", "react", "react-dom"]
+ignores: ["node-version-use", "ts-dev-stack", "@biomejs/biome", "esbuild-plugin-progress",  "@types/react", "@types/react-dom", "react", "react-dom"]

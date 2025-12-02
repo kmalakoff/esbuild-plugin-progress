@@ -25,10 +25,10 @@
   ],
   "scripts": {
     "build": "tsds build",
-    "deploy": "tsds deploy",
     "docs": "tsds docs",
     "format": "biome check --write --unsafe",
-    "test": "mocha --no-timeouts test/**/*.test.*",
+    "prepublishOnly": "tsds validate",
+    "test": "tsds test:node --no-timeouts",
     "test:engines": "nvu engines tsds test:node --no-timeouts",
     "version": "tsds version"
   },
@@ -36,13 +36,16 @@
     "ora": "3.4.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "*",
     "@types/mocha": "*",
     "@types/node": "*",
     "esbuild": "*",
     "fs-extra": "*",
     "install-optional": "*",
+    "node-version-use": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "ts-dev-stack": "*"
   },
   "engines": {
     "node": ">=16"
