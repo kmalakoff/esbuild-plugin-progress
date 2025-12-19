@@ -11,7 +11,7 @@ export default (options: Options = {}): Plugin => {
 
   return {
     name: 'progress',
-    setup(build: PluginBuild): undefined {
+    setup(build: PluginBuild): void {
       build.onStart(() => {
         spinner.text = `${message}\n`;
         spinner.start();
