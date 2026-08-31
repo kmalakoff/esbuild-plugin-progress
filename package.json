@@ -37,9 +37,10 @@
     "ora": "3.4.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
     "@types/mocha": "*",
     "@types/node": "*",
-    "esbuild": "^0.27.1",
+    "esbuild": "^0.28.0",
     "fs-extra": "^11.3.2",
     "install-optional": "^1.0.20",
     "node-version-use": "*",
@@ -50,5 +51,12 @@
   },
   "engines": {
     "node": ">=16"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "node-filename-to-dist-paths": true,
+    "node-semvers": true,
+    "node-version-use": true,
+    "thread-sleep-compat": true
   }
 }
