@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-progress",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "A plugin to add a progress spinner to esbuild",
   "keywords": [
     "progress",
@@ -32,7 +32,7 @@
     "@types/node": "*",
     "esbuild": "*",
     "fs-extra": "*",
-    "install-optional": "^0.1.32",
+    "install-optional": "^0.1.33",
     "react": "*",
     "react-dom": "*"
   },
