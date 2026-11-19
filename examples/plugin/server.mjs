@@ -1,5 +1,5 @@
 import esbuild from 'esbuild';
-import progress from '../../lib/index.js';
+import progress from '../../dist/esm/index.js';
 
 esbuild.build({
   entryPoints: ['client.tsx'],
